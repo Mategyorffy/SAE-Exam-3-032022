@@ -62,6 +62,11 @@ public class Level
         points = 0;
 
         // ***** Students Start here ******
+
+        Debug.Log($"{grid.CellCount}");
+        
+
+
     }
 
 
@@ -108,7 +113,7 @@ public class Level
     public LevelState CheckLevelState()
     {
         // comment the out the following line
-        return LevelState.NoElementsLeft;
+        return LevelState.FurtherMovesPossible;
     }
 
     /// <summary>
@@ -119,7 +124,10 @@ public class Level
     public int CalculatePoints(int numElements)
     {
         // comment the out the following line
-        return -99;
+        // return -99;
+        points = Mathf.FloorToInt(Mathf.Pow((numElements - 2), 2));
+
+        return points;
     }
 
     /// <summary>
